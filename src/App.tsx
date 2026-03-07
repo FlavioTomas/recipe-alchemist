@@ -1,10 +1,10 @@
+import { Cauldron } from './components/Cauldron';
+import { SearchBar } from './components/SearchBar';
 
-import { SearchBar } from "./components/SearchBar";
 
 
 
 function App() {
-
 	return (
 		<div className="min-h-screen bg-alchemist-dark text-slate-100 p-8">
 			<div className="max-w-4xl mx-auto space-y-8 text-center">
@@ -17,7 +17,9 @@ function App() {
 					</p>
 				</header>
 				<section className="pt-8">
-					<SearchBar/>
+					<SearchBar />
+
+					<Cauldron/>
 				</section>
 			</div>
 		</div>
