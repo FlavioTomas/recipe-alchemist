@@ -1,5 +1,8 @@
 import { Cauldron } from './components/Cauldron';
+import { RecipeGrid } from './components/RecipeGrid';
 import { SearchBar } from './components/SearchBar';
+
+
 
 function App() {
 	return (
@@ -19,6 +22,8 @@ function App() {
 					<Cauldron />
 				</section>
 			</div>
+
+			<RecipeGrid />
 		</div>
 	);
 }
