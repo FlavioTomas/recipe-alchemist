@@ -48,7 +48,7 @@ export function SearchBar() {
 				/>
 				<button
 					type="submit"
-					className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium"
+					className="px-6 py-2 bg-purple-600 hover:bg-purple-700 transition-colors duration-300 text-white rounded-lg font-medium"
 					disabled={isLoading}
 				>
 					{isLoading ? '...' : 'Search'}
@@ -61,7 +61,7 @@ export function SearchBar() {
 							<button
 								type="button"
 								onClick={() => handleAdd(item)}
-								className="w-full text-left px-4 py-3 hover:bg-slate-700 text-slate-200 transition-colors flex items-center justify-between cursor-grab"
+								className="w-full text-left px-4 py-3 hover:bg-slate-700 text-slate-200 transition-colors duration-300 flex items-center justify-between cursor-grab"
 							>
 								<span className="capitalize">{item.name}</span>
 								<span className="text-xs text-purple-400 bg-purple-900/30 px-2 py-1 rounded">

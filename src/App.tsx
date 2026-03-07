@@ -1,9 +1,6 @@
 import { Cauldron } from './components/Cauldron';
 import { SearchBar } from './components/SearchBar';
 
-
-
-
 function App() {
 	return (
 		<div className="min-h-screen bg-alchemist-dark text-slate-100 p-8">
@@ -19,7 +16,7 @@ function App() {
 				<section className="pt-8">
 					<SearchBar />
 
-					<Cauldron/>
+					<Cauldron />
 				</section>
 			</div>
 		</div>
