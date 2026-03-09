@@ -1,21 +1,28 @@
+import { useState } from 'react';
 import { useAlchemistStore } from '../store/useAlchemistStore';
+import { RecipeModal } from './RecipeModal';
 
 export const RecipeGrid = () => {
 	const recipes = useAlchemistStore((state) => state.recipes);
+
+	const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
 
 	if (recipes.length === 0) return null;
 
 	return (
 		<div className="w-full max-w-5xl mx-auto mt-12 mb-20">
-			<h2 className="text-3x1 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-8">
+			<h2 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-8">
 				✨ Magical Concoctions Discovered
 			</h2>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 				{recipes.map((recipe) => (
+					// biome-ignore lint/a11y/useKeyWithClickEvents: O clique no fundo (backdrop) é um padrão aceito
+					// biome-ignore lint/a11y/noStaticElementInteractions: O clique no fundo (backdrop) é um padrão aceito
 					<div
 						key={recipe.id}
-						className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-emerald-900/20 transition-all duration-300 group"
+						onClick={() => setSelectedRecipeId(recipe.id)}
+						className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-emerald-900/20 transition-all duration-300 group cursor-pointer"
 					>
 						<div className="relative h-48 overflow-hidden">
 							<img
@@ -42,6 +49,9 @@ export const RecipeGrid = () => {
 					</div>
 				))}
 			</div>
+			{selectedRecipeId !== null && (
+				<RecipeModal recipeId={selectedRecipeId} onClose={() => setSelectedRecipeId(null)}/>
+			)}
 		</div>
 	);
 };
