@@ -2,8 +2,6 @@ import { Cauldron } from './components/Cauldron';
 import { RecipeGrid } from './components/RecipeGrid';
 import { SearchBar } from './components/SearchBar';
 
-
-
 function App() {
 	return (
 		<div className="min-h-screen bg-alchemist-dark text-slate-100 p-8">

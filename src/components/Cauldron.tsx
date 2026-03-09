@@ -2,16 +2,11 @@ import { useState } from 'react';
 import { api } from '../services/api';
 import { useAlchemistStore } from '../store/useAlchemistStore';
 
-
-
-
 export function Cauldron() {
 	const cauldron = useAlchemistStore((state) => state.cauldron);
 	const removeIngredient = useAlchemistStore((state) => state.removeIngredient);
 	const [isBrewing, SetIsBrewing] = useState(false);
-	const setRecipes = useAlchemistStore(state => state.setRecipes)
-
-
+	const setRecipes = useAlchemistStore((state) => state.setRecipes);
 
 	const handleBrewPotion = async () => {
 		SetIsBrewing(true);
@@ -21,8 +16,7 @@ export function Cauldron() {
 
 			const recipesData = await api.searchRecipeByIngredients(ingredientsNames);
 
-			setRecipes(recipesData)
-
+			setRecipes(recipesData);
 		} catch (error) {
 			console.error('Erro ao fazer a poção:', error);
 		} finally {

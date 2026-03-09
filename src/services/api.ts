@@ -29,4 +29,22 @@ export const api = {
 
 		return response.data;
 	},
+
+	getRecipeInformation: async (id: number) => {
+		try {
+			const response = await axios.get(
+				`https://api.spoonacular.com/recipes/${id}/information`,
+				{
+					params: {
+						apiKey: API_KEY,
+						includeNutrition: false,
+					},
+				},
+			);
+			return response.data;
+		} catch (error) {
+			console.log(`Erro ao buscar os detalhes da receita ${id}:`, error);
+			throw error;
+		}
+	},
 };

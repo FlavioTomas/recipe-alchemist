@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import type { Ingredient } from '../types/recipe';
 
-
 export interface Recipe {
 	id: number;
 	title: string;
@@ -9,7 +8,6 @@ export interface Recipe {
 	usedIngredientCount: number;
 	missedIngredientCount: number;
 }
-
 
 interface AlchemistState {
 	cauldron: Ingredient[];
@@ -40,5 +38,5 @@ export const useAlchemistStore = create<AlchemistState>((set) => ({
 
 	clearCauldron: () => set({ cauldron: [], recipes: [] }),
 
-	setRecipes: recipes => set({ recipes }) 
+	setRecipes: (recipes) => set({ recipes }),
 }));
