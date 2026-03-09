@@ -7,6 +7,7 @@ export function Cauldron() {
 	const removeIngredient = useAlchemistStore((state) => state.removeIngredient);
 	const [isBrewing, SetIsBrewing] = useState(false);
 	const setRecipes = useAlchemistStore((state) => state.setRecipes);
+	const clearCauldron = useAlchemistStore((state) => state.clearCauldron);
 
 	const handleBrewPotion = async () => {
 		SetIsBrewing(true);
@@ -57,7 +58,7 @@ export function Cauldron() {
 				))}
 			</div>
 
-			<div className="mt-6 flex justify-end border-t border-slate-700 pt-4">
+			<div className="mt-6 flex justify-center items-center border-t border-slate-700 pt-4 relative">
 				<button
 					type="button"
 					onClick={handleBrewPotion}
@@ -65,6 +66,13 @@ export function Cauldron() {
 					className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transitions-colors duration-300 shadow-lg shadow-emerald-900/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center mx-auto gap-2"
 				>
 					{isBrewing ? 'Brewing...' : 'Brew Potion 🪄'}
+				</button>
+				<button
+					type="button"
+					onClick={clearCauldron}
+					className="absolute right-0 px-4 py-2 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-lg font-medium transition-colors duration-300 flex items-center gap-2"
+				>
+					🗑️
 				</button>
 			</div>
 		</div>

@@ -50,7 +50,10 @@ export const RecipeGrid = () => {
 				))}
 			</div>
 			{selectedRecipeId !== null && (
-				<RecipeModal recipeId={selectedRecipeId} onClose={() => setSelectedRecipeId(null)}/>
+				<RecipeModal
+					recipeId={selectedRecipeId}
+					onClose={() => setSelectedRecipeId(null)}
+				/>
 			)}
 		</div>
 	);
