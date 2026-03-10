@@ -2,9 +2,9 @@
 
 > "Toss ingredients into your cauldron and discover magical recipes."
 
-![Recipe Alchemist Preview](./public/preview.png) *(Adicione uma screenshot do projeto aqui depois)*
+![Recipe Alchemist Preview](./public/preview.png)
 
-**🔗 [Live Demo: Experimente o aplicativo aqui](LINK_DO_SEU_DEPLOY_AQUI)**
+**🔗 [Live Demo: Experimente o aplicativo aqui](https://recipe-alchemist-seven.vercel.app)**
 
 ## ✨ Sobre o Projeto
 
