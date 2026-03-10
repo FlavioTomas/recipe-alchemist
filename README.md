@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# 🧪 The Recipe Alchemist (MVP)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> "Toss ingredients into your cauldron and discover magical recipes."
 
-Currently, two official plugins are available:
+![Recipe Alchemist Preview](./public/preview.png) *(Adicione uma screenshot do projeto aqui depois)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**🔗 [Live Demo: Experimente o aplicativo aqui](LINK_DO_SEU_DEPLOY_AQUI)**
 
-## React Compiler
+## ✨ Sobre o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The Recipe Alchemist é uma aplicação web interativa que ajuda os usuários a descobrir o que cozinhar com os ingredientes que já têm em casa. Este projeto é o **MVP (Minimum Viable Product)**, focado em validar a ideia central: buscar ingredientes, gerenciar o "caldeirão" (estado global) e exibir instruções detalhadas de receitas usando dados reais.
 
-## Expanding the ESLint configuration
+## 🚀 Funcionalidades do MVP
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Busca por Ingredientes:** Adicione itens da sua geladeira ao "caldeirão".
+- **Integração com API Real:** Comunicação direta com a API da *Spoonacular* para buscar receitas baseadas na sua lista.
+- **Gerenciamento de Estado Global:** Uso do Zustand para manter os ingredientes salvos na memória durante a navegação.
+- **Livro de Feitiços (Modal):** Ao clicar em uma receita, um modal detalhado se abre mostrando a foto em alta resolução, tempo de preparo, porções, lista de medidas e o modo de preparo passo a passo.
+- **Ações Rápidas:** Opção de esvaziar o caldeirão para iniciar uma nova busca rapidamente.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React + Vite:** Para uma interface rápida e um ambiente de desenvolvimento otimizado.
+- **TypeScript:** Tipagem estática para garantir segurança e prevenir bugs na integração com a API.
+- **Tailwind CSS:** Estilização responsiva, moderna e direto no HTML.
+- **Zustand:** Gerenciamento de estado global leve e descomplicado.
+- **Axios:** Cliente HTTP para comunicação assíncrona com a Spoonacular API.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Como rodar localmente
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/SEU_USUARIO/recipe-alchemist.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+1. Configure a API Key:
+
+- Crie um arquivo `.env` na raiz do projeto.
+- Adicione sua chave da Spoonacular: `VITE_SPOONACULAR_API_KEY=sua_chave_aqui`
+
+1. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+## 🔮 Próximos Passos (Roadmap)
+
+- [ ] Adicionar vídeos de demonstração das receitas.
+- [ ] Melhorar as animações de entrada e saída dos cartões.
+- [ ] Refinar a estilização UI/UX.
